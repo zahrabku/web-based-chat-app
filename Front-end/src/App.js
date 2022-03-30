@@ -1,13 +1,19 @@
 import { Route, Routes } from "react-router-dom";
 
 import { Login } from "./components/Login";
+import { Chats } from "./components/Chats";
+
+import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Login />} />
-      </Routes>
+      <AuthContextProvider>
+        <Routes>
+          <Route path="/chats" element={<Chats />} />
+          <Route path="/" element={<Login />} />
+        </Routes>
+      </AuthContextProvider>
     </div>
   );
 }
