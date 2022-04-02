@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 
-export const Navbar = () => {
+export const Navbar = ({ logoutHandler }) => {
   return (
     <div className={styles.container}>
       <div className={styles.name}>biligram</div>
-      <div className={styles.logout}>Logout</div>
+      <div className={styles.logout} onClick={logoutHandler}>
+        Logout
+      </div>
     </div>
   );
 };
